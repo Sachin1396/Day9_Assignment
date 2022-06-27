@@ -4,24 +4,25 @@ public class PresentorAbsent {
         int wage_per_hour = 20;
         int full_day_hour = 8;
         int part_time = 4;
-        int daily_wage;
+        int daily_wage = 0;
+         final int full_time = 0 ;
+        final int part = 1 ;
+         final int absent = 2 ;
         int random = (int)(Math.random() * 10)%3;
-        if(random==1)
-        {
-            System.out.println("Employee is present");
+        switch (random){
+            case full_time:
             daily_wage = wage_per_hour *  full_day_hour ;
-            System.out.println("daily wage :"+daily_wage);
-        } else if (random==2) {
-        System.out.println("employee is absent");
+            break;
+            case absent:
             daily_wage = 0;
-            System.out.println("Daily wage:"+daily_wage);
-        }
-        else {
-            System.out.println("employee is Partime");
+        break;
+            case part:
             daily_wage = wage_per_hour * part_time;
-            System.out.println("Daily wage:"+daily_wage);
+            break;
+            default:
+                System.out.println("enter correct");
 
         }
-
+        System.out.println("daily wage:" +daily_wage);
     }
 }
